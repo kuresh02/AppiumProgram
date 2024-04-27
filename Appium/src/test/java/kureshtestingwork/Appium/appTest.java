@@ -17,10 +17,9 @@ public class appTest {
 
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixel 3");
-		options.setApp("D:\\API_Testing_PetStoreAutomation\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("D:\\Appium_Testing\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		URL url = new URL(" http://127.0.0.1:4723");
 		AndroidDriver driver = new AndroidDriver(url, options);
-		driver.quit();
-
+		driver.quit(); 
 	}
 }
