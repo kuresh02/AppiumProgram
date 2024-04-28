@@ -8,29 +8,24 @@ import java.net.URL;
 
 import org.testng.annotations.Test;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class appTest {
+public class appTest extends BaseTest{
 
 	@Test
 	public void AppiumTest() throws MalformedURLException, URISyntaxException {
 
-		AppiumDriverLocalService service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\purna\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
 		
-		service.start();
+		// using locater with xpath, id, accessibilityId, classname, AndroidUIAutomator,
+		//for accessibilityId and AndroidUIAutomator user AppiumBy
 		
-		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("Pixel 3");
-		options.setApp("D:\\Appium_Testing\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-		URL url = new URL(" http://127.0.0.1:4723");
-		AndroidDriver driver = new AndroidDriver(url, options);
+		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
 		
-		driver.quit(); 
-		service.stop();
+		
 		
 	}
 }

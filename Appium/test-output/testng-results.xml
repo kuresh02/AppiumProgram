@@ -2,15 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-27T20:23:51 IST" name="Default suite" finished-at="2024-04-27T20:24:36 IST" duration-ms="45161">
+  <suite started-at="2024-04-28T11:55:35 IST" name="Default suite" finished-at="2024-04-28T11:55:52 IST" duration-ms="17282">
     <groups>
     </groups>
-    <test started-at="2024-04-27T20:23:51 IST" name="Default test" finished-at="2024-04-27T20:24:36 IST" duration-ms="45161">
+    <test started-at="2024-04-28T11:55:35 IST" name="Default test" finished-at="2024-04-28T11:55:52 IST" duration-ms="17282">
       <class name="kureshtestingwork.Appium.appTest">
-        <test-method signature="AppiumTest()[pri:0, instance:kureshtestingwork.Appium.appTest@53045c6c]" started-at="2024-04-27T20:23:51 IST" name="AppiumTest" finished-at="2024-04-27T20:24:36 IST" duration-ms="44992" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:kureshtestingwork.Appium.appTest@221a3fa4]" started-at="2024-04-28T11:55:35 IST" name="ConfigureAppium" finished-at="2024-04-28T11:55:49 IST" duration-ms="14455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfigureAppium -->
+        <test-method signature="AppiumTest()[pri:0, instance:kureshtestingwork.Appium.appTest@221a3fa4]" started-at="2024-04-28T11:55:49 IST" name="AppiumTest" finished-at="2024-04-28T11:55:52 IST" duration-ms="2052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AppiumTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:kureshtestingwork.Appium.appTest@221a3fa4]" started-at="2024-04-28T11:55:52 IST" name="teardown" finished-at="2024-04-28T11:55:52 IST" duration-ms="733" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- kureshtestingwork.Appium.appTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
