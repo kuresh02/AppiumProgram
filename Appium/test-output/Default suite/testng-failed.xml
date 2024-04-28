@@ -5,6 +5,8 @@
     <classes>
       <class name="kureshtestingwork.Appium.appTest">
         <methods>
+          <include name="ConfigureAppium"/>
+          <include name="teardown"/>
           <include name="AppiumTest"/>
         </methods>
       </class> <!-- kureshtestingwork.Appium.appTest -->

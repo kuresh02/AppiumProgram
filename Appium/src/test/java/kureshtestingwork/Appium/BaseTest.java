@@ -3,6 +3,7 @@ package kureshtestingwork.Appium;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -36,8 +37,15 @@ public class BaseTest {
 		// options.setDeviceName("Pixel 3");
 		options.setUdid("mn99wwrweivcnvlr");
 		options.setApp("D:\\Appium_Testing\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		
+		
 		URL url = new URL(" http://127.0.0.1:4723");
+		//below command for session new creation
+		//adb uninstall io.appium.uiautomator2.server
+		//adb uninstall io.appium.uiautomator2.server.test
+		
 		driver = new AndroidDriver(url, options);
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
 	//for closing activity
