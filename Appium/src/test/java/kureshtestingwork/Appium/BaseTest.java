@@ -5,9 +5,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+
+import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -34,8 +39,8 @@ public class BaseTest {
 		service.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		// options.setDeviceName("Pixel 3");
-		options.setUdid("mn99wwrweivcnvlr");
+		options.setDeviceName("Pixel 3");
+//		options.setUdid("mn99wwrweivcnvlr");
 		options.setApp("D:\\Appium_Testing\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
 		
@@ -47,7 +52,37 @@ public class BaseTest {
 		driver = new AndroidDriver(url, options);
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-
+	
+	public void longPressAction(WebElement ele) {
+		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) ele).getId(),"duration",2000));
+	}
+	
+	
+	public void scrollToEndAction() {
+	    int count = 0;
+	    boolean canScrollMore;
+	    do {
+	        canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+	                "left", 100, "top", 100, "width", 200, "height", 200,
+	                "direction", "down",
+	                "percent", 1.0
+	        ));
+	        count++;
+	        System.out.println("Scroll attempt: " + count);
+	        System.out.println("Can scroll more? " + canScrollMore);
+	    } while (canScrollMore);
+	}
+	
+	
+	public void swipeAction(WebElement wb, String direction) {
+		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+				"elementId", ((RemoteWebElement)wb).getId(),
+				"direction", direction,
+		        "percent", 0.75
+		));
+	}
+	
 	//for closing activity
 	@AfterClass
 	public void teardown() {
